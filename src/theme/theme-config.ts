@@ -32,7 +32,7 @@ export const themeConfig: ThemeConfig = {
   defaultMode: 'light',
   enableSystemMode: false,
   modeStorageKey: 'theme-mode',
-  direction: 'ltr',
+  direction: 'rtl',
   classesPrefix: 'minimal',
   /** **************************************
    * Typography

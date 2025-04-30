@@ -1,28 +1,44 @@
 import type { RouteObject } from 'react-router';
 
-import { lazy } from 'react';
-import { Navigate } from 'react-router';
+import { Outlet } from 'react-router';
+import { lazy, Suspense } from 'react';
 
-import { CONFIG } from 'src/global-config';
+import { Layout } from 'src/layouts/simple';
 
-import { authRoutes } from './auth';
-import { dashboardRoutes } from './dashboard';
+import { LoadingScreen } from 'src/components/loading-screen';
+
+import { usePathname } from '../hooks';
 
 // ----------------------------------------------------------------------
 
 const Page404 = lazy(() => import('src/pages/error/404'));
 
+const IndexPage = lazy(() => import('src/pages/home'));
+
+// ----------------------------------------------------------------------
+
+function SuspenseOutlet() {
+  const pathname = usePathname();
+  return (
+    <Suspense key={pathname} fallback={<LoadingScreen />}>
+      <Outlet />
+    </Suspense>
+  );
+}
+
+const layout = () => (
+  <Layout>
+    <SuspenseOutlet />
+  </Layout>
+);
 export const routesSection: RouteObject[] = [
   {
     path: '/',
-    element: <Navigate to={CONFIG.auth.redirectPath} replace />,
+    element: layout(),
+    children: [
+      { element: <IndexPage />, index: true },
+    ],
   },
-
-  // Auth
-  ...authRoutes,
-
-  // Dashboard
-  ...dashboardRoutes,
 
   // No match
   { path: '*', element: <Page404 /> },

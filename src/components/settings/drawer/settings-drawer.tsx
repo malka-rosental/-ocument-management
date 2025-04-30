@@ -45,7 +45,8 @@ export function SettingsDrawer({ sx, defaultSettings }: SettingsDrawerProps) {
   // Visible options by default settings
   const isFontFamilyVisible = hasKeys(defaultSettings, ['fontFamily']);
   const isCompactLayoutVisible = hasKeys(defaultSettings, ['compactLayout']);
-  const isDirectionVisible = hasKeys(defaultSettings, ['direction']);
+  const isDirectionVisible = true;
+  // hasKeys(defaultSettings, ['direction']);
   const isColorSchemeVisible = hasKeys(defaultSettings, ['colorScheme']);
   const isContrastVisible = hasKeys(defaultSettings, ['contrast']);
   const isNavColorVisible = hasKeys(defaultSettings, ['navColor']);
@@ -121,7 +122,7 @@ export function SettingsDrawer({ sx, defaultSettings }: SettingsDrawerProps) {
       selected={settings.state.direction === 'rtl'}
       icon={<SvgIcon>{settingIcons.alignRight}</SvgIcon>}
       onChangeOption={() =>
-        settings.setState({ direction: settings.state.direction === 'ltr' ? 'rtl' : 'ltr' })
+        settings.setState({ direction: settings.state.direction === 'rtl' ? 'rtl' : 'ltr' })
       }
     />
   );

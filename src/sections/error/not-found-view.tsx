@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 import { RouterLink } from 'src/routes/components';
 
-import { SimpleLayout } from 'src/layouts/simple';
+import { Layout } from 'src/layouts/simple';
 import { PageNotFoundIllustration } from 'src/assets/illustrations';
 
 import { varBounce, MotionContainer } from 'src/components/animate';
@@ -15,7 +15,7 @@ import { varBounce, MotionContainer } from 'src/components/animate';
 
 export function NotFoundView() {
   return (
-    <SimpleLayout
+    <Layout
       slotProps={{
         content: { compact: true },
       }}
@@ -42,6 +42,6 @@ export function NotFoundView() {
           Go to home
         </Button>
       </Container>
-    </SimpleLayout>
+    </Layout>
   );
 }

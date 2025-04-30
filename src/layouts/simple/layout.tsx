@@ -35,7 +35,7 @@ export type SimpleLayoutProps = LayoutBaseProps & {
   };
 };
 
-export function SimpleLayout({
+export function Layout({
   sx,
   cssVars,
   children,
@@ -51,23 +51,7 @@ export function SimpleLayout({
           This is an info Alert.
         </Alert>
       ),
-      leftArea: <Logo />,
-      rightArea: (
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 } }}>
-          {/** @slot Help link */}
-          <Link
-            href={paths.faqs}
-            component={RouterLink}
-            color="inherit"
-            sx={{ typography: 'subtitle2' }}
-          >
-            Need help?
-          </Link>
-
-          {/** @slot Settings button */}
-          <SettingsButton />
-        </Box>
-      ),
+      rightArea: <Logo />,
     };
 
     return (

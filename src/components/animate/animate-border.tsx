@@ -130,7 +130,7 @@ export function AnimateBorder({
 
   return (
     <Box
-      dir="ltr"
+      dir="rtl"
       ref={rootRef}
       className={mergeClasses([animateBorderClasses.root, className])}
       sx={[
