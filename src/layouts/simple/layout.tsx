@@ -2,20 +2,15 @@ import type { Breakpoint } from '@mui/material/styles';
 
 import { merge } from 'es-toolkit';
 
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Alert from '@mui/material/Alert';
-
-import { paths } from 'src/routes/paths';
-import { RouterLink } from 'src/routes/components';
 
 import { Logo } from 'src/components/logo';
 
 import { SimpleCompactContent } from './content';
+import { UserInfo } from '../components/UserInfo';
 import { MainSection } from '../core/main-section';
 import { LayoutSection } from '../core/layout-section';
 import { HeaderSection } from '../core/header-section';
-import { SettingsButton } from '../components/settings-button';
 
 import type { SimpleCompactContentProps } from './content';
 import type { MainSectionProps } from '../core/main-section';
@@ -42,16 +37,14 @@ export function Layout({
   slotProps,
   layoutQuery = 'md',
 }: SimpleLayoutProps) {
+
   const renderHeader = () => {
+
     const headerSlotProps: HeaderSectionProps['slotProps'] = { container: { maxWidth: false } };
 
     const headerSlots: HeaderSectionProps['slots'] = {
-      topArea: (
-        <Alert severity="info" sx={{ display: 'none', borderRadius: 0 }}>
-          This is an info Alert.
-        </Alert>
-      ),
       rightArea: <Logo />,
+      leftArea: <UserInfo />
     };
 
     return (

@@ -29,6 +29,7 @@ export function SimpleCompactContent({
           flex: '1 1 auto',
           textAlign: 'center',
           flexDirection: 'column',
+          direction: 'rtl !important',
           p: theme.spacing(3, 2, 10, 2),
           maxWidth: 'var(--layout-simple-content-compact-width)',
           [theme.breakpoints.up(layoutQuery)]: {

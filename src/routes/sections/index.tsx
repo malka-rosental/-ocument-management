@@ -27,7 +27,7 @@ function SuspenseOutlet() {
 }
 
 const layout = () => (
-  <Layout>
+  <Layout sx={{direction: 'rtl'}}>
     <SuspenseOutlet />
   </Layout>
 );

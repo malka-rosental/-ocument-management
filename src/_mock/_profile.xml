@@ -1,0 +1,101 @@
+<string xmlns="http://Rafael.Local/">
+    <?xml version="1.0" encoding="utf-16"?>
+    <DmProfileDetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://Rafael.Local/DmProfileSchema.xsd">
+        <DocName>API Mapping DM</DocName>
+        <SecurityClassification>
+            <Description>בלמס</Description>
+            <Code>UnClassified</Code>
+        </SecurityClassification>
+        <BusinessClassification>
+            <Description>ללא סיווג עסקי</Description>
+            <Code>UnClassified</Code>
+        </BusinessClassification>
+        <PersonClassification>
+            <Description>ללא רגישות אישית</Description>
+            <Code>UnClassified</Code>
+        </PersonClassification>
+        <ContentType>
+            <Description>UNKNOWN_PROPERTY</Description>
+            <Code>GENERAL</Code>
+        </ContentType>
+        <Author>
+            <UserId>dddd</UserId>
+            <FullName>ברק דניאל</FullName>
+        </Author>
+        <Department>
+            <Description>מטכם פיתוח מערכות אירגוניות</Description>
+            <Code>C0D20</Code>
+        </Department>
+        <Shetach>
+            <Description />
+            <Code />
+        </Shetach>
+        <Project>
+            <Description />
+            <Code />
+        </Project>
+        <Categories />
+        <Customers />
+        <Stage>
+            <Description />
+            <Code />
+        </Stage>
+        <DistributionStatus>
+            <Description>No valid CODE found</Description>
+            <Code>NotNeededForSupply</Code>
+        </DistributionStatus>
+        <Writers />
+        <Approvers />
+        <Checkers />
+        <LastVersionApproved />
+        <CreationDate>2025-04-27T10:20:50</CreationDate>
+        <CreatedBy>
+            <UserId>dddd</UserId>
+            <FullName>ברק דניאל</FullName>
+        </CreatedBy>
+        <LastEditDate>2025-04-27T10:20:54</LastEditDate>
+        <PdfNumber>0</PdfNumber>
+        <DocFolderDescription />
+        <SubDocFolder>
+            <Description>UNKNOWN_PROPERTY</Description>
+            <Code>UNKNOWN_PROPERTY</Code>
+        </SubDocFolder>
+        <DocProperty>
+            <Description />
+            <Code />
+        </DocProperty>
+        <FolderNumber />
+        <ChangeRequestNumber />
+        <DepartmentFolder>
+            <Description />
+            <Code />
+        </DepartmentFolder>
+        <Proof />
+        <NumberOfCopies>0</NumberOfCopies>
+        <OriginalDocDate>1753-01-01 00:00:00</OriginalDocDate>
+        <SentTo />
+        <CopyTo />
+        <InOutMail>O</InOutMail>
+        <Keywords />
+        <Notes />
+        <ApplicationName>MS WORD</ApplicationName>
+        <Status>
+            <Description>הוצא</Description>
+            <DocumentStatus>CheckedOut</DocumentStatus>
+        </Status>
+        <FolderVer />
+        <Versions>
+            <Version>1</Version>
+        </Versions>
+        <Trustees>
+            <Trustee>
+                <TrusteeName>dddd</TrusteeName>
+                <TrusteeDisplayName>ברק דניאל</TrusteeDisplayName>
+                <TrusteeLocation />
+                <TrusteePhoneNumber />
+                <TrusteeType>User</TrusteeType>
+                <AccessRights>FullAccess</AccessRights>
+            </Trustee>
+        </Trustees>
+        <DocumentExtension>.docx</DocumentExtension>
+    </DmProfileDetails>

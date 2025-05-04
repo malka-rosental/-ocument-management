@@ -32,6 +32,7 @@ html {
 body,
 #root,
 #root__layout {
+  /* direction: rtl; */
   display: flex;
   flex: 1 1 auto;
   min-height: 100%;
@@ -57,4 +58,7 @@ input[type='number']::-webkit-outer-spin-button {
 input[type='number']::-webkit-inner-spin-button {
   margin: 0;
   -webkit-appearance: none;
+}
+.MuiDataGrid-root .MuiDataGrid-cell:focus-within {
+  outline: none !important;
 }
