@@ -12,16 +12,18 @@ interface MockDataMap {
   }
 
   interface MockDataMap {
-    '/DMLinkAPI/api/dmsearch/getrecentuserdocs': Document[];
-    '/DMUserDetails/GetDMUser': User;
-    '/dmprofileservice/dmprofileservice.asmx/GetDmProfile': DmProfileDetails
+    'https://development/api/DMLinkAPI/api/dmsearch/getrecentuserdocs': Document[];
+    'https://development/api/DMUserDetails/GetDMUser': User;
+    'https://development/api/dmprofileservice/dmprofileservice.asmx/GetDmProfile': DmProfileDetails
+    "https://development/api/ICReleaseDocumentApi/api": any;
 
   }
 
   export const mockData: MockDataMap = {
-      '/DMLinkAPI/api/dmsearch/getrecentuserdocs': _documents,
-      "/DMUserDetails/GetDMUser": _user,
-      "/dmprofileservice/dmprofileservice.asmx/GetDmProfile": _dmProfileDetails
+      'https://development/api/DMLinkAPI/api/dmsearch/getrecentuserdocs': _documents,
+      "https://development/api/DMUserDetails/GetDMUser": _user,
+      "https://development/api/dmprofileservice/dmprofileservice.asmx/GetDmProfile": _dmProfileDetails,
+      "https://development/api/ICReleaseDocumentApi/api": {type: 4}
   };
   
   export const getMockResponse = <T>(endpoint: string): T => {

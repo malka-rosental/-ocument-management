@@ -8,6 +8,7 @@ import { Layout } from 'src/layouts/simple';
 import { LoadingScreen } from 'src/components/loading-screen';
 
 import { usePathname } from '../hooks';
+import { ErrorBoundary } from '../components';
 
 // ----------------------------------------------------------------------
 
@@ -27,7 +28,7 @@ function SuspenseOutlet() {
 }
 
 const layout = () => (
-  <Layout sx={{direction: 'rtl'}}>
+  <Layout sx={{direction: 'rtl'}} slotProps={{header: {sx:{direction:'ltr', display:'flex'}}}}>
     <SuspenseOutlet />
   </Layout>
 );
@@ -35,6 +36,7 @@ export const routesSection: RouteObject[] = [
   {
     path: '/',
     element: layout(),
+    errorElement: <ErrorBoundary />,
     children: [
       { element: <IndexPage />, index: true },
     ],

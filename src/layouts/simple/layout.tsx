@@ -2,8 +2,6 @@ import type { Breakpoint } from '@mui/material/styles';
 
 import { merge } from 'es-toolkit';
 
-import Alert from '@mui/material/Alert';
-
 import { Logo } from 'src/components/logo';
 
 import { SimpleCompactContent } from './content';

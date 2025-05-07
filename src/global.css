@@ -37,6 +37,7 @@ body,
   flex: 1 1 auto;
   min-height: 100%;
   flex-direction: column;
+  /* font-family: 'Assistant, Arial, sans-s,erif'; */
 }
 img {
   max-width: 100%;
@@ -61,4 +62,14 @@ input[type='number']::-webkit-inner-spin-button {
 }
 .MuiDataGrid-root .MuiDataGrid-cell:focus-within {
   outline: none !important;
+}
+
+[dir=rtl] .MuiButton-startIcon {
+  display: inherit;
+  margin-right: -4px;
+  margin-left: 8px;
+}
+
+[dir=rtl] .MuiPopper-root-MuiDataGrid-panel {
+  direction: rtl;
 }

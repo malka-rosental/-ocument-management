@@ -37,8 +37,8 @@ const request = async <T>(
     });
   }
 
-  let url = `${BASE_URL}${endpoint}`;
-
+  // let url = `${BASE_URL}${endpoint}`;
+let url = endpoint;
   if (params && method === 'GET') {
     const query = new URLSearchParams(params).toString();
     url += `?${query}`;

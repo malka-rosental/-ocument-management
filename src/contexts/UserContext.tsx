@@ -1,6 +1,7 @@
 // context/UserContext.tsx
 import React, { useState, useEffect, useContext, createContext } from 'react';
 
+import { useConfig } from './ConfigContext';
 import apiService from '../services/api-service';
 
 import type { User } from '../types';
@@ -16,11 +17,12 @@ const UserContext = createContext<UserContextValue | undefined>(undefined);
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
+    const {getDmUserApi} = useConfig();
 
     useEffect(() => {
         const loadUser = async () => {
             try {
-                const userData = await apiService.get<User>('/DMUserDetails/GetDMUser'); // or your user endpoint
+                const userData = await apiService.get<User>(`${getDmUserApi}/DMUserDetails/GetDMUser`); // or your user endpoint
                 setUser(userData);
             } catch (error) {
                 console.error('Failed to fetch user', error);

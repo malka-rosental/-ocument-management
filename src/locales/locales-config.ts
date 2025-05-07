@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------
 
-export const fallbackLng = 'en';
-export const languages = ['en', 'fr', 'vi', 'cn', 'ar'];
+export const fallbackLng = 'he';
+export const languages = ['en', 'fr', 'vi', 'cn', 'ar', 'he'];
 export const defaultNS = 'common';
 
 export type LanguageValue = (typeof languages)[number];
@@ -24,7 +24,7 @@ export function i18nOptions(lng = fallbackLng, ns = defaultNS) {
 
 export const changeLangMessages: Record<
   LanguageValue,
-  { success: string; error: string; loading: string }
+  { success: string; error: string; loading: string, helloMessage?: string }
 > = {
   en: {
     success: 'Language has been changed!',
@@ -50,5 +50,12 @@ export const changeLangMessages: Record<
     success: 'تم تغيير اللغة!',
     error: 'خطأ في تغيير اللغة!',
     loading: 'جارٍ التحميل...',
+    helloMessage: ""
   },
+  he:{
+    helloMessage: 'שלום',
+    success: "",
+    error: "",
+    loading: ""
+  }
 };

@@ -111,5 +111,5 @@ export const table = {
   MuiTableRow,
   MuiTableCell,
   MuiTableContainer,
-  MuiTablePagination,
+  // MuiTablePagination,
 };

@@ -12,7 +12,6 @@ export function ErrorBoundary() {
   return (
     <>
       {inputGlobalStyles()}
-
       <div className={errorBoundaryClasses.root}>
         <div className={errorBoundaryClasses.container}>{renderErrorMessage(error)}</div>
       </div>
@@ -90,7 +89,7 @@ const cssVars: CSSObject = {
   '--font-stack-monospace':
     '"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace',
   '--font-stack-sans':
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Assistance, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
 };
 
 const rootStyles = (): CSSObject => ({

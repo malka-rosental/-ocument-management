@@ -38,25 +38,25 @@ export const themeConfig: ThemeConfig = {
    * Typography
    *************************************** */
   fontFamily: {
-    primary: 'Public Sans Variable',
-    secondary: 'Barlow',
+    primary: 'Assistant, Arial',
+    secondary: 'Assistant, Arial',
   },
   /** **************************************
    * Palette
    *************************************** */
   palette: {
     primary: {
-      lighter: '#C8FAD6',
-      light: '#5BE49B',
-      main: '#00A76F',
-      dark: '#007867',
-      darker: '#004B50',
+      lighter: '#006C9C',
+      light: '#006C9C',
+      main: '#006C9C',
+      dark: '#006C9C',
+      darker: '#006C9C',
       contrastText: '#FFFFFF',
     },
     secondary: {
       lighter: '#EFD6FF',
       light: '#C684FF',
-      main: '#8E33FF',
+      main: '#005D92',
       dark: '#5119B7',
       darker: '#27097A',
       contrastText: '#FFFFFF',
@@ -64,7 +64,7 @@ export const themeConfig: ThemeConfig = {
     info: {
       lighter: '#CAFDF5',
       light: '#61F3F3',
-      main: '#00B8D9',
+      main: '#0048E2',
       dark: '#006C9C',
       darker: '#003768',
       contrastText: '#FFFFFF',

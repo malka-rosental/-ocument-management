@@ -3,7 +3,7 @@ import type { DmProfileDetails } from "src/types/DmProfile";
 export const _dmProfileDetails :DmProfileDetails = {
     DocName: "API Mapping DM",
     SecurityClassification: {
-        Description: "בלמס",
+        Description: "לחלנ יםןיםןיםן יםןי ןיןםו יןםוי ם ןי םן",
         Code: "UnClassified"
     },
     BusinessClassification: {
@@ -32,7 +32,7 @@ export const _dmProfileDetails :DmProfileDetails = {
         Description: "",
         Code: ""
     },
-    Categories: {},
+    Categories: 'משרד, בית, אולם',
     Customers: {},
     Stage: {
         Description: "",

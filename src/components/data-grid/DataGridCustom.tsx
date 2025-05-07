@@ -1,66 +1,53 @@
 import type { Document } from 'src/types/documents';
 
-// DataGridCustom.tsx
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
+import { Box } from '@mui/material';
 import { DataGrid, gridClasses } from '@mui/x-data-grid';
 
 // eslint-disable-next-line import/no-unresolved
 import { EmptyContent } from 'src/components/empty-content';
 
-import { useDocuments } from './useDocuments';
 import { getColumns } from './DataGridColumns';
 import { DataGridToolbar } from './DataGridToolbar';
-import { DmProfileDetailsModal } from './DmProfileDetailsModal';
+import { useDmActions } from '../../common/hooks/useDmActions';
+import { DmProfileDetailsModal } from '../dm-profile/DmProfileDetailsModal';
+import { useModalContext } from '../dm-profile/contexts/ProfileModalContext';
 
-export function DataGridCustom() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedRow, setSelectedRow] = useState<Document | null>(null);
-  const [selectedRows, setSelectedRows] = useState<string[]>([]);
-  const [columnVisibilityModel, setColumnVisibilityModel] = useState({ id: true });
+export function DataGridCustom({ rows }: { rows: Document[] }) {
+    const { selectedRow, setSelectedRow } = useModalContext();
+    const { handleRowAction, getDmPreviewUrl } = useDmActions()
+    const columns = useMemo(() => getColumns(getDmPreviewUrl, handleRowAction), []);
 
-  const { documents } = useDocuments();
-
-  const openModal = (row: Document) => {
-    setSelectedRow(row);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedRow(null);
-  };
-
-  const columns = useMemo(() => getColumns(openModal), []);
-
-  return (
-    <>
-      <DataGrid
-        rows={documents}
-        columns={columns}
-        getRowId={(row) => row.Docnumber}
-        onRowSelectionModelChange={(ids) => setSelectedRows(ids as string[])}
-        disableRowSelectionOnClick
-        slots={{
-          toolbar: DataGridToolbar,
-          noRowsOverlay: () => <EmptyContent />,
-          noResultsOverlay: () => <EmptyContent title="No results found" />,
-        }}
-        sx={{
-          [`& .${gridClasses.cell}`]: {
-            alignItems: 'center',
-            display: 'inline-flex',
-          },
-        }}
-      />
-      {selectedRow && (
-        <DmProfileDetailsModal
-          open={isModalOpen}
-          onClose={closeModal}
-          docNumber={selectedRow.Docnumber}
-          docLibrary={selectedRow.Library}
-        />
-      )}
-    </>
-  );
+    return (
+        <>
+            <Box sx={{ height: 'calc(100vh - var(--layout-header-desktop-height))', overflow: 'auto', padding: '0 40px 40px 40px' }}>
+                <DataGrid
+                    hideFooter
+                    rows={rows}
+                    columns={columns}
+                    getRowId={(row) => row.Docnumber}
+                    onRowClick={(params) => setSelectedRow(params.row)}
+                    rowSelectionModel={selectedRow ? [selectedRow.Docnumber] : []}
+                    // onRowSelectionModelChange={(ids) => setSelectedRows(ids as string[])}
+                    disableRowSelectionOnClick
+                    slots={{
+                        toolbar: () => <DataGridToolbar title='מסמכים אחרונים' selectedRow={selectedRow ?? null} />,
+                        noRowsOverlay: () => <EmptyContent />,
+                        noResultsOverlay: () => <EmptyContent title="No results found" />,
+                    }}
+                    sx={{
+                        '& .MuiDataGrid-main': {
+                            borderRadius: 2,
+                        },
+                        [`& .${gridClasses.cell}`]: {
+                            alignItems: 'center',
+                            display: 'inline-flex',
+                        },
+                    }}
+                />
+            </Box>
+            {selectedRow && <DmProfileDetailsModal />}
+        </>
+    );
 }

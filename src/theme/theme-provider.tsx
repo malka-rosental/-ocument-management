@@ -23,6 +23,7 @@ export function ThemeProvider({ themeOverrides, children, ...other }: ThemeProvi
   const theme = createTheme({
     settingsState: settings.state,
     themeOverrides,
+   
   });
 
   return (
