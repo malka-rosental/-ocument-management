@@ -24,7 +24,7 @@ export default function DmProfilePreview({ dmProfile }: DmProfilePreviewProps) {
         { label: 'מודול/ קטגוריה', value: Categories, tooltipValue: Categories, size: 6 },
     ]
     return (
-        <Box component="form" noValidate autoComplete="off" sx={{ p: 3, direction: 'rtl' }}>
+        <Box component="form" noValidate autoComplete="off" sx={{ p: 3 }}>
             <Grid container spacing={2} >
                 {dmProfileMetaData.map((field, index) => (
                     <Grid size={field.size} key={index}>
@@ -47,8 +47,12 @@ export default function DmProfilePreview({ dmProfile }: DmProfilePreviewProps) {
                                 />
                             </Tooltip>
                         ) : (
+                            <Box
+                            //  sx={{direction: 'rtl'}}
+                             >
+
                             <TextField
-                                dir='rtl'
+                                // dir='rtl'
                                 fullWidth
                                 label={field.label}
                                 value={field.value ?? ''}
@@ -62,6 +66,8 @@ export default function DmProfilePreview({ dmProfile }: DmProfilePreviewProps) {
                                     }
                                 }}
                             />
+                            </Box>
+
                         )}
                     </Grid>
                 ))}

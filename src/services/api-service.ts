@@ -51,10 +51,12 @@ let url = endpoint;
       // Add Authorization header if needed
       // 'Authorization': `Bearer ${token}`,
     },
+    credentials: 'include',
   };
 
   if (body && method !== 'GET') {
     options.body = JSON.stringify(body);
+
   }
 
   const response = await fetch(url, options);

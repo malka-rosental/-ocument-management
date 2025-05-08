@@ -38,8 +38,8 @@ export const themeConfig: ThemeConfig = {
    * Typography
    *************************************** */
   fontFamily: {
-    primary: 'Assistant, Arial',
-    secondary: 'Assistant, Arial',
+    primary: 'Assistant',
+    secondary: 'Assistant',
   },
   /** **************************************
    * Palette

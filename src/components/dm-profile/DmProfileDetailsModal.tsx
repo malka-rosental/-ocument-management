@@ -9,11 +9,11 @@ import { useModalContext } from './contexts/ProfileModalContext';
 
 
 export const DmProfileDetailsModal = () => {
-  const {getDmProfileApi} = useConfig();
+  const { getDmProfileApi } = useConfig();
   const { isModalOpen, selectedRow, closeModal } = useModalContext();
   const { user } = useUser();
   const [isEditMode, setIsEditMode] = useState(false);
-  const { Docname: docNumber, Library: docLibrary } = selectedRow;
+  const { Docnumber: docNumber, Library: docLibrary } = selectedRow;
   const enabled = isModalOpen && !!docNumber && !!docLibrary;
   const profileDetailsParams = {
     DST: user?.userDST || '',
@@ -32,7 +32,7 @@ export const DmProfileDetailsModal = () => {
       data={data}
       isEditMode={isEditMode}
       setIsEditMode={setIsEditMode}
-      onClose={closeModal}
-    />
+      onClose={closeModal} 
+      docNumber={docNumber} />
   );
 };

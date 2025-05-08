@@ -42,6 +42,7 @@ export const DmProfileDetailsModal: React.FC<DmProfileDetailsModalProps> = ({
             isEditMode={isEditMode}
             setIsEditMode={setIsEditMode}
             onClose={onClose}
+            docNumber={docNumber}
         />
     );
 };

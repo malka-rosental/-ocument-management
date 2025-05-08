@@ -17,6 +17,13 @@ import type { ThemeOptions } from './types';
 // ----------------------------------------------------------------------
 
 export const baseTheme: ThemeOptions = {
+  typography: {
+    ...typography,
+    fontFamily: 'Assiחstant, sans-serif',
+    // Optional: define weights or other typography levels
+    h1: { fontWeight: 700 },
+    body1: { fontSize: '1rem' },
+  },
   colorSchemes: {
     light: {
       palette: palette.light,
@@ -31,7 +38,7 @@ export const baseTheme: ThemeOptions = {
   },
   mixins,
   components,
-  typography,
+  // typography,
   shape: { borderRadius: 8 },
   direction: themeConfig.direction,
   cssVariables: themeConfig.cssVariables,
@@ -50,7 +57,7 @@ export function createTheme({
   settingsState,
   themeOverrides = {
      typography: {
-      fontFamily: 'Assistant, sans-serif',
+      fontFamily: 'Assistant',
   },
     palette: {
       primary: {

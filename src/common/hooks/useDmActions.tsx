@@ -49,6 +49,7 @@ export function useDmActions() {
 
     const handleRowAction = useCallback(
         (action: RowActionType, payload?: any) => {
+            console.log(payload)
             setRow(payload ?? selectedRow);
             const currentRow = payload ?? selectedRow;
             switch (action) {

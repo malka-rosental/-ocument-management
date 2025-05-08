@@ -22,11 +22,12 @@ interface DmProfileDialogProps {
   isEditMode: boolean;
   setIsEditMode: (v: boolean) => void;
   onClose: () => void;
+  docNumber: string;
 }
 
 export const DmProfileDialog: React.FC<DmProfileDialogProps> = ({
   open, loading, error, data,
-  isEditMode, setIsEditMode, onClose
+  isEditMode, setIsEditMode, onClose, docNumber
 }) => {
   const editRef = useRef<DmProfileEditHandle>(null);
 
@@ -38,7 +39,7 @@ export const DmProfileDialog: React.FC<DmProfileDialogProps> = ({
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm" dir="rtl">
       <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between' }}>
         פרופיל מסמך
-        <DialogTitleActions isEditMode={isEditMode} setEditMode={setIsEditMode} />
+        <DialogTitleActions docNumber={docNumber} isEditMode={isEditMode} setEditMode={setIsEditMode} />
       </DialogTitle>
       <DialogContent dividers>
         {loading ? (

@@ -9,7 +9,10 @@ export const UserInfo = () => {
   if (!user) return null;
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', direction:'rtl' }}>
+    <div style={{ display: 'flex', flexDirection: 'row', 
+    direction:'rtl' 
+  }}
+    >
       <UserIcon />
       <div style={{ display: 'flex', flexDirection: 'column' }}>
 

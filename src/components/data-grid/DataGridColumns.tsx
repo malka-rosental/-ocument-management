@@ -1,7 +1,8 @@
 /* eslint-disable import/no-unresolved */
 import type { JSX } from 'react';
-import type { GridColDef } from '@mui/x-data-grid';
+// import type { GridColDef } from '@mui/x-data-grid';
 import type { Document } from 'src/types/documents';
+import type { GridColDef, GridRowSelectionModel } from '@mui/x-data-grid-pro';
 
 import { Box, Link } from '@mui/material';
 import { GridActionsCellItem } from '@mui/x-data-grid';
@@ -28,14 +29,16 @@ const fileIcons: Record<string, JSX.Element> = {
   outlook: <OutlookFileIcon />,
 };
 
-const menuCellItemSx = { direction: 'rtl', columnGap: 2 };
+const menuCellItemSx = { 
+  direction: 'rtl',
+   columnGap: 2 };
 
 const getFileIcon = (application: string): JSX.Element => {
   const key = application?.split(' ')?.[1]?.toLowerCase();
   return fileIcons[key] ?? <PdfFileIcon />;
 };
 
-export const getColumns = (getDmPreviewUrl: (row: Document) => string ,handleRowAction: (action: RowActionType, row: Document) => void): GridColDef[] => {
+export const getColumns = (getDmPreviewUrl: (row: Document) => string, handleRowAction: (action: RowActionType, row: Document) => void): GridColDef[] => {
   const baseColumns: GridColDef[] = [
     {
 
@@ -46,12 +49,17 @@ export const getColumns = (getDmPreviewUrl: (row: Document) => string ,handleRow
         <Box display="flex" flexDirection="column" justifyContent="center">
           <Box display="flex" alignItems="center" columnGap="12px">
             <Link
-              href={ getDmPreviewUrl(row)}
+              href={getDmPreviewUrl(row)}
               target="_blank"
               rel="noopener noreferrer"
-              underline="hover"
-              color="primary"
-              sx={{ cursor: 'pointer' }}
+              underline="none"
+              sx={{
+                cursor: 'pointer',
+                color: 'inherit',
+                '&:hover': {
+                  color: 'info.main',
+                },
+              }}
             >
               {getFileIcon(row.Application)} {row.Docname}
             </Link>
@@ -108,12 +116,12 @@ export const getColumns = (getDmPreviewUrl: (row: Document) => string ,handleRow
     align: 'right',
     flex: 0.25,
     getActions: ({ row }) => [
-      <GridActionsCellItem icon={<InfoIcon />} label="Info" onClick={() => handleRowAction('profileInfo', row)} />,
-      <GridActionsCellItem icon={<EditPermissionIcon />} label="Edit permission" onClick={() => handleRowAction('editPermission', row)} />,
-      <GridActionsCellItem icon={<EmailIcon />} label="Email" onClick={() => handleRowAction('sendEmail', row)} />,
-      <GridActionsCellItem sx={menuCellItemSx} showInMenu icon={<CopyClipboardIcon />} label="העתק קישור" onClick={() => handleRowAction('copyUrl', row)} />,
-      <GridActionsCellItem sx={menuCellItemSx} showInMenu icon={<UnlockIcon />} label="שחרור מסמך" onClick={() => handleRowAction('unlock', row)} />,
-      <GridActionsCellItem sx={menuCellItemSx} showInMenu icon={<RequestPermissionIcon />} label="בקשת הרשאות" onClick={() => handleRowAction('requestPermission', row)} />,
+      // <GridActionsCellItem icon={<InfoIcon />} label="Info" onClick={() => handleRowAction('profileInfo', row)} />,
+      // <GridActionsCellItem icon={<EditPermissionIcon />} label="Edit permission" onClick={() => handleRowAction('editPermission', row)} />,
+      // <GridActionsCellItem icon={<EmailIcon />} label="Email" onClick={() => handleRowAction('sendEmail', row)} />,
+      // <GridActionsCellItem sx={menuCellItemSx} showInMenu icon={<CopyClipboardIcon />} label="העתק קישור" onClick={() => handleRowAction('copyUrl', row)} />,
+      // <GridActionsCellItem sx={menuCellItemSx} showInMenu icon={<UnlockIcon />} label="שחרור מסמך" onClick={() => handleRowAction('unlock', row)} />,
+      // <GridActionsCellItem sx={menuCellItemSx} showInMenu icon={<RequestPermissionIcon />} label="בקשת הרשאות" onClick={() => handleRowAction('requestPermission', row)} />,
     ],
   };
 

@@ -1,23 +1,29 @@
-import type { Document } from 'src/types/documents';
+// import type { Document } from 'src/types/documents';
+
+// import { Box, Typography } from '@mui/material';
+// import { GridToolbarContainer, GridToolbarQuickFilter } from '@mui/x-data-grid';
+
+// import { ToolbarItemActions } from './ToolbarItemActions';
 
 import { Box, Typography } from '@mui/material';
-import { GridToolbarContainer, GridToolbarQuickFilter } from '@mui/x-data-grid';
 
 import { ToolbarItemActions } from './ToolbarItemActions';
 
 interface DataGridToolBarProps {
-    title: string;
-    selectedRow: Document | null;
+    title?: string;
 }
-export function DataGridToolbar({ title, selectedRow }: DataGridToolBarProps) {
-    return (
-        <GridToolbarContainer sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
-            <GridToolbarQuickFilter />
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row' }}>
-                <Typography variant="h6">{title}</Typography>
-                 <ToolbarItemActions />
-            </Box>
-            <Box sx={{ flexGrow: 1 }} />
-        </GridToolbarContainer>
-    );
-}
+export const DataGridToolbar = ({ title }: DataGridToolBarProps) => (
+    <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row' }}>
+        <Typography variant="h6">{title}</Typography>
+        <ToolbarItemActions />
+    </Box>
+)
+
+// const CustomToolbar = () => (
+//       <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+//         <Typography variant="h6">מסמכים אחרונים</Typography>
+//         <Button variant="outlined" size="small">פעולה</Button>
+//       </Box>
+//   );
+
+ export default DataGridToolbar;

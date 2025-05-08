@@ -4,6 +4,7 @@ import { m } from 'framer-motion';
 
 import { Box, Button } from "@mui/material";
 
+import { ButtonTextIcon } from 'src/common/components/ButtonTextIcon';
 import { InfoIcon, EmailIcon, UnlockIcon, CopyClipboardIcon, EditPermissionIcon, RequestPermissionIcon } from "src/assets/icons/actions-icons";
 
 import { useDmActions } from '../../common/hooks/useDmActions';
@@ -20,15 +21,15 @@ export const ToolbarItemActions = ({ selectesdRow }: ToolbarItemActionsProps) =>
 
     return (
         <Box component={m.div} sx={{ display: 'flex', columnGap: 2, direction: 'rtl' }}>
-            <Button
+            <ButtonTextIcon
                 disabled={!selectedRow}
                 startIcon={<InfoIcon />}
                 size="small"
                 onClick={() => handleRowAction('profileInfo', selectedRow)}
             >
                 <p>פרופיל מסמך</p>
-            </Button>
-            <Button
+            </ButtonTextIcon>
+            <ButtonTextIcon
                 disabled={!selectedRow}
                 size="small"
                 startIcon={<EditPermissionIcon />}
@@ -36,38 +37,38 @@ export const ToolbarItemActions = ({ selectesdRow }: ToolbarItemActionsProps) =>
 
             >
                 <p>עריכת הרשאות</p>
-            </Button><Button
+            </ButtonTextIcon><ButtonTextIcon
                 disabled={!selectedRow}
                 size="small"
                 startIcon={<EmailIcon />}
                 onClick={() => handleRowAction('sendEmail')}
             >
                 <p>שליחת מייל </p>
-            </Button>
-            <Button
+            </ButtonTextIcon>
+            <ButtonTextIcon
                 size='small'
                 disabled={!selectedRow}
                 startIcon={<CopyClipboardIcon />}
                 onClick={() => handleRowAction('copyUrl', selectedRow)}
             ><p>העתק קישור</p>
-            </Button>
-            <Button
+            </ButtonTextIcon>
+            <ButtonTextIcon
                 disabled={!selectedRow}
                 size="small"
                 startIcon={<UnlockIcon />}
                 onClick={() => handleRowAction('unlock')}
             >
                 <p>שחרור מסמך  </p>
-            </Button>
-            <Button
+            </ButtonTextIcon>
+            <ButtonTextIcon
                 disabled={!selectedRow}
                 size="small"
                 startIcon={<RequestPermissionIcon />}
                 onClick={() => handleRowAction('requestPermission')}
             >
                 <p>בקשת הרשאות </p>
-            </Button>
-        </Box>
+            </ButtonTextIcon>
+        </Box >
 
     )
 }

@@ -28,7 +28,9 @@ function SuspenseOutlet() {
 }
 
 const layout = () => (
-  <Layout sx={{direction: 'rtl'}} slotProps={{header: {sx:{direction:'ltr', display:'flex'}}}}>
+  <Layout
+    sx={{ direction: 'rtl' }}
+    slotProps={{ header: { sx: { direction: 'rtl', display: 'flex' } } }}>
     <SuspenseOutlet />
   </Layout>
 );
